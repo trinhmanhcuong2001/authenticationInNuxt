@@ -1,10 +1,10 @@
 <template>
     <div>
-        <!-- <nav>
+        <nav>
             <NuxtLink to="/">Home</NuxtLink> |
             <NuxtLink to="/protected">Protected</NuxtLink> |
             <NuxtLink to="/login">Login</NuxtLink>
-        </nav> -->
+        </nav>
         <slot />
     </div>
 </template>

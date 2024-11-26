@@ -1,10 +1,10 @@
 export default defineNuxtPlugin(() => {
     const auth = useState("auth", () => ({
         isAuthenticated: false,
-        user: null as { name: string; email: string } | null,
+        user:  null,
     }));
 
-    const login = (user: { name: string; email: string }) => {
+    const login = (user: any) => {
         auth.value.isAuthenticated = true;
         auth.value.user = user;
     };

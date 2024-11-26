@@ -4,8 +4,12 @@
         <div class="content">
             <div class="header">Header</div>
             <div class="content-item">
-                <div class="content-item-1 red">COntent1</div>
-                <div class="content-item-1 green">Content2</div>
+                <div class="content-item-1 red">
+                    <div >COntent1</div>
+                </div>
+                <div class="content-item-1 green">
+                    <div style="height: 3000px;">Content2</div>
+                </div>
             </div>
         </div>
     </div>
@@ -14,6 +18,7 @@
 .container {
     display: flex;
     height: 100vh;
+    overflow: hidden;
 }
 .sidebar {
     background-color: aqua;
@@ -26,6 +31,7 @@
     flex: 1;
     /* height: 100%; */
     margin-left: 35%;
+    /* overflow: hidden; */
 }
 .content .header {
     position: fixed;
@@ -36,20 +42,25 @@
 .content-item {
     display: flex;
     margin-top: 48px;
-    /* max-height: calc(100vh - 48px); */
     overflow: hidden;
+    height: 100%;
 }
 .content-item-1 {
-    /* flex: 1; */
-    flex-grow: 1;
-    /* flex-shrink: 0; */
+    overflow: auto;
+    flex: 1;
+    /* height: 100%; */
+}
+
+.content-item-1::-webkit-scrollbar {
+    width: 0;
 }
 .red {
     background-color: red;
+    /* height: 2000px; */
 }
 .green {
     background-color: green;
-    height: 1000px;
+    /* height: 5000px; */
 }
 </style>
 

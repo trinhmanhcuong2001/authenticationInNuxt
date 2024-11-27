@@ -3,8 +3,6 @@ definePageMeta({
     middleware: "auth",
 });
 const auth = useNuxtApp().$auth;
-
-// console.log(auth.value.isAuthen);
 </script>
 
 <template>

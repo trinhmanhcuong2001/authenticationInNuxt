@@ -3,17 +3,12 @@
     <a-layout style="min-height: 100vh">
         <a-layout-sider v-model:collapsed="collapsed" collapsible>
             <div class="logo" />
-            <a-menu
-                theme="dark"
-                mode="inline"
-            >
+            <a-menu theme="dark" mode="inline">
                 <a-menu-item key="1">
-                    <pie-chart-outlined />
-                    <span>Option 1</span>
-                </a-menu-item>
-                <a-menu-item key="2">
-                    <desktop-outlined />
-                    <span>Option 2</span>
+                    <nuxt-link to="/">
+                        <pie-chart-outlined />
+                    <span>Home</span>
+                    </nuxt-link>
                 </a-menu-item>
                 <a-sub-menu key="sub1">
                     <template #title>
@@ -22,19 +17,11 @@
                             <span>User</span>
                         </span>
                     </template>
-                    <a-menu-item key="3">Tom</a-menu-item>
-                    <a-menu-item key="4">Bill</a-menu-item>
-                    <a-menu-item key="5">Alex</a-menu-item>
-                </a-sub-menu>
-                <a-sub-menu key="sub2">
-                    <template #title>
-                        <span>
-                            <team-outlined />
-                            <span>Team</span>
-                        </span>
-                    </template>
-                    <a-menu-item key="6">Team 1</a-menu-item>
-                    <a-menu-item key="8">Team 2</a-menu-item>
+                    <a-menu-item key="3">
+                        <nuxt-link to="/auth/user-management"
+                            >List User</nuxt-link
+                        >
+                    </a-menu-item>
                 </a-sub-menu>
                 <a-menu-item key="9" @click="handleLogout">
                     <account-book-outlined />

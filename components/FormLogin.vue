@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { User } from "~/plugins/auth";
 const login = useNuxtApp().$login;
 
 interface FormState {
@@ -12,11 +13,8 @@ const formState = reactive<FormState>({
 });
 
 const handleLogin = async () => {
-    const { data, error } = await useAsyncData("login", () =>
-        $fetch("/api/users")
-    );
-
-    const user = data.value?.find(
+    const data = await $fetch<User[]>("/api/users");
+    const user = data?.find(
         (u) => u.email === formState.email && u.password === formState.password
     );
     if (user) {
